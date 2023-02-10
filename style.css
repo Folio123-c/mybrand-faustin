@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    background-color: #0A192F;
 }
 body{
 
@@ -55,6 +56,7 @@ nav button{
     display: block;
     margin: 10px;
     top: 200px;
+    line-height: 35px;
 }
 .social-icons li{
    list-style: none;
@@ -77,7 +79,6 @@ nav button{
 }
 .container{
 
-    height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 50px 15%;
@@ -114,13 +115,13 @@ nav button{
     font-style: normal;
     font-weight: 400;
     font-size: 25px;
-    line-height: 31px;
+    line-height: 38px;
 }
 .container button{
 box-sizing: border-box;
 width: 150px;
 height: 70px;
-margin-top: 20px;
+margin-top: 130px;
 color: #64FFDA;
 background: #0A192F;
 border: 1px solid #64FFDA;
@@ -151,9 +152,101 @@ border-radius: 5px;
     transform: rotate(180.33deg);
    
 }
-#me{
-
+#cloud,#html,#javascript,#mongodb,#pl\/sql,#mysql,#postgresql,#you,#css{
+    color: #64FFDA;
 }
+.about_me{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 5%;
+    justify-content: space-between;
+    background: #0A192F;
+}
+.about_me p{
+    color: #BCD6F5;
+    font-family: Calibri;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 31px;}
+
+
+
+.home1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}.home1 .my_home1 img{
+     width: 300px;
+     height: 450px;
+     border-radius:20px;
+     align-items: center;
+ }.home_text{
+      flex-direction: column;
+      align-items: center;
+  }.my_home1{
+       justify-content: center;
+       padding-left: 70px;
+   }
+   #img{
+       position: relative;
+       width: 315.17px;
+       height: 332px;
+      left: -70px;
+       top: -200px;
+   }
+   .title{
+       font-family: 'Fira Code';
+       font-style: normal;
+       font-weight: 400;
+       font-size: 25px;
+       line-height: 33px;
+
+       color: #CCD6F6;
+   }
+   .skills{
+
+       display: flex;
+       flex-direction: column;
+       padding: 50px 5%;
+       justify-content: space-between;
+       background: #0A192F;
+   }
+   .list ul li{
+       font-family: 'Inter';
+       font-style: normal;
+       font-weight: 400;
+       font-size: 25px;
+       line-height: 80px;
+       color: #8892B0;
+       list-style: none;
+   }
+   .list{
+       padding: 50px 5%;
+
+   }
+   .portfolio{
+       display: flex;
+       flex-direction: column;
+       padding: 50px 5%;
+       justify-content: space-between;
+       background: #0A192F;
+
+   }
+   .about_me ul li{
+       font-family: 'Calibri';
+       font-style: normal;
+       font-weight: 400;
+       font-size: 30px;
+       line-height: 40px;
+       color: #64FFDA;
+   }
+
+
+
 
 
 
