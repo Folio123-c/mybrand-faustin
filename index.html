@@ -33,8 +33,8 @@
 <body>
 <div  class="homepage" id="frame-1">
 <div class="navbar">
-    <nav>
-        <img src="./group-77.svg">
+    <nav class="topnav" id="myTopnav">
+        <img src="./Group-77.svg" alt="">
 
 
         <ul>
@@ -43,12 +43,14 @@
             <a href="#aboutme">About me</a>
             <a href="#skills">Skills</a>
             <a href="#portfolio">Portfolio</a>
-            <a href="#blog">blogs</a>
-            <a href="#contact">Contact me</a>
-              <a href="login.html"> <button>Login</button></a>
+            <a href="#blogs">blogs</a>
+            <a href="#contactme">Contact me</a>
+              <a href="./Login.html"> <button>Login</button></a>
           </li>
         </ul>
-<!--        <a href="#" style="font-size:30px;" class="icon" onclick="myFunction()">&#9776;</a>-->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction2()">
+            <i class="fa fa-bars"></i>
+        </a>
     </nav>
 </div>
 </div>
@@ -65,10 +67,10 @@
 </div>
 
 
-<div class="container">
+<div class="container" id="home">
   
 <div class="greet">Hi, My name is</div><br><br>
-<div class="names"><span>Faustin NIYONIZEYE.</span> 
+<div class="names"><span>Faustin NIYONIZEYE.</span>
 <p id="me">I am fullstack software developer</p>
   <img src="/ellipse-16@2x.png" style="width: 193px; height: 195px;" alt="">
 </div>
@@ -76,17 +78,20 @@
   I am a full-stack developer with experience in a variety of programming languages, including JavaScript, Python, C, and C++. With a strong background in computer science and a passion for building innovative web applications, I am dedicated to delivering high-quality and user-friendly solutions
 </p>
 </div>
-<button>Check out my work</button>
+    <a href="#portfolio">
+<button>Check out my work</button></a>
+    <a href="mailto:niyof97@gmail.com">
 <div class="email">niyof97@gmail.com
-  <div class="line2"></div>
-</div>
+<div class="line2"></div>
+</div></a>
 </div>
 <section class="home1" id="aboutme">
 
     <div class="my_home1" ><h1 class="title">About me</h1>
         <div class="about_me">
+
             <p class="home_text">
-                My name is NIYONIZEYE Faustin and I am a fullstack developer with a passion for creating innovative and engaging web experiences.
+                My name is NIYONIZEYE Faustin, and I am a fullstack developer with a passion for creating innovative and engaging web experiences.
                 I have a strong background in<span id="javascript"> JavaScript</span>,<span id="html"> HTML</span>, and<span id="css"> CSS</span>, and am well-versed in several popular databases,
                 including<span id="mongodb"> MongoDB</span>,<span id="mysql"> MySQL</span>,<span id="pl/sql"> PL/SQL</span>, and <span id="postgresql">PostgreSQL</span>.<br/> <br/>
 
@@ -103,8 +108,9 @@
 
 
             </p>    </div>
-    </div> <div class="my_home1">
-    <img src="group-78.png"  class="image" id="img">
+    </div>
+    <div class="my_home1">
+    <img src="Group-78.png"  class="image" id="img">
 </div>
 </section>
 
@@ -130,7 +136,7 @@
                 The system was built using JavaScript, HTML, CSS and Node.js for the back-end,
                 and React.js for the front-end. The system also used Google Cloud
                 for hosting and MongoDB for storing inventory data and other business information.<br><br></p>
-            <li>Real-time Polling System</li>
+            <li>Real-time Polling System<br><br></li>
             <p>This project was a real-time polling system that allows users to create and participate in polls
                 in real-time. The system was built using JavaScript, HTML, CSS and Node.js
                 for the back-end and React.js for the front-end. The system also used WebSockets
@@ -139,5 +145,102 @@
     </div>
 
 </section>
+<section class="blogs" id="blogs">
+    <h1 id="blog1">Blogs</h1>
+    <div class="flex-container">
+        <div class="item1"><h2>Programming concept<br><br><br><br></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                iaculis lectus vel metus pellentesque, eu venenatis est euismod.
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                per inceptos himenaeos. Phasellus eget lacinia ipsum. Aenean gravida
+                interdum enim, nec rhoncus orci mollis et. Maecenas posuere sed libero
+                id porta. Aenean finibus nulla metus, vitae </p><br>
+            <div ><button class="btn" type="submit">Read more</button></div>
+        </div>
+
+        <div class="item1"><h2>Javascript concept<br><br><br><br></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                iaculis lectus vel metus pellentesque, eu venenatis est euismod.
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                per inceptos himenaeos. Phasellus eget lacinia ipsum. Aenean gravida
+                interdum enim, nec rhoncus orci mollis et. Maecenas posuere sed libero
+                id porta. Aenean finibus nulla metus, vitae </p><br>
+            <div ><button class="btn" type="submit">Read more</button></div>
+        </div>
+
+
+        <div class="item1"><h2>Programming concept <br><br><br><br></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                iaculis lectus vel metus pellentesque, eu venenatis est euismod.
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                per inceptos himenaeos. Phasellus eget lacinia ipsum. Aenean gravida
+                interdum enim, nec rhoncus orci mollis et. Maecenas posuere sed libero
+                id porta. Aenean finibus nulla metus, vitae </p><br>
+            <div ><button class="btn" type="submit">Read more</button></div></div>
+
+    </div>
+</section>
+
+<section class="contact-me" id="contactme">
+                    <h1 class="title" id="contact--me">Contact me</h1>
+    <div class="row">
+        <div class="column" >
+            <h1 id="intouch">Get in touch</h1>
+
+            <h2 id="build">Let's build something great together</h2>
+            <a href="mailto:niyof97@gmai.com" id="say-hello">Say hello</a>
+
+        </div>
+        <div class="column" >
+
+    <form>
+    <h2 id="leave-a-note">Leave a note</h2>
+
+        <div class="container2">
+    <label ><b>Email</b></label>      <input type="email" placeholder="Enter your email" name="First-name" required>
+
+    <label><b>Name</b></label>       <input type="Email" placeholder="Enter your name" name="second-name" required>
+
+    <label ><b>Message</b></label>    <input type="name" placeholder="Write your message" name="email" required>
+
+
+    <button class="button2" type="submit">Submit</button>
+  </div>
+      </form>
+
+        </div>
+    </div>
+
+
+</section>
+<section>
+    <div class="footer"> Designed by NF
+
+</div>
+</section>
 </body>
+<script>
+    window.onscroll = function() {myFunction()};
+
+    let navbar = document.querySelector(".navbar");
+
+    let sticky = navbar.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+    function myFunction2() {
+        let x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+
 </html>
