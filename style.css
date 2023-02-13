@@ -19,6 +19,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     background: #0A192F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-bottom: 2px solid #10e8b5;
 
 }
@@ -77,6 +78,10 @@ nav button{
 .social-icons li{
    list-style: none;
 }
+.social-icons :hover{
+    color: #64FFDA;
+}
+
 .social-icons a{
      display: block;
      text-decoration: none;
@@ -108,9 +113,10 @@ nav button{
     font-size: 20px;
     color: #64FFDA;
 
+
 }
 .container .names{
-    padding: 10px 10%;
+    padding: 50px 10%;
 }
 .container .names span{
    
@@ -124,8 +130,8 @@ nav button{
 }
 .container .names img{
     float: right;
-    margin-top: -120px;
-    flex-wrap: wrap;
+    display: flex;
+
 }
 .whoiam p{
     color: #BCD6F5;
@@ -199,6 +205,7 @@ border-radius: 5px;
 
 }.home1 .my_home1 img{
      top:80px;
+
  }
 .home_text{
       flex-direction: column;
@@ -206,17 +213,6 @@ border-radius: 5px;
   }.my_home1{
        justify-content: center;
        padding-left: 70px;
-   }
-   #img{
-       position: relative;
-       width: 315.17px;
-       height: 332px;
-      left: -70px;
-       display:inline-flex;
-       flex-wrap: wrap;
-
-
-
    }
 .content {
     padding: 16px;
@@ -457,6 +453,7 @@ input[type=email], input[type=password],input[type=name] {
 .topnav .icon {
     display: none;
     color:#64FFDA;
+    font-size: 45px;
 
 }
 @media screen and (max-width: 800px) {
@@ -473,10 +470,7 @@ input[type=email], input[type=password],input[type=name] {
      padding: 10px 5%;
 
  }
- .my_home1 img{
-     display: none ;
 
- }
 }
 
 @media screen and (max-width: 800px) {
@@ -491,10 +485,15 @@ input[type=email], input[type=password],input[type=name] {
         display: block;
         text-align: left;
     }
-    nav img{
-        float: left;
-        top:0;
+    .container{
+        flex-direction: column;
+
     }
+    .my_home1 img{
+        display: none ;
+
+    }
+
 
 }
 @media screen and (max-width: 600px) {
@@ -502,16 +501,15 @@ input[type=email], input[type=password],input[type=name] {
         width: 100%;
     }
 
+
 }
 @media screen and (max-width: 600px){
     .container .names img{
-
+display: flex;
 
         }
-    #img{
-        display:flex;
-       align-items: flex-start;
-
+    .about_me{
+        flex-direction: column;
     }
 
 }
