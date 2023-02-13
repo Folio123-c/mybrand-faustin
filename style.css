@@ -493,12 +493,19 @@ input[type=email], input[type=password],input[type=name] {
         display: none ;
 
     }
+    .item1 h2{
+        color: #CCD6F6;
+        font-size: 20px;
+    }
 
 
 }
 @media screen and (max-width: 800px) {
     .column {
         width: 100%;
+    }
+    .flex-container{
+        flex-direction: column;
     }
 
 
