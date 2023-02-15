@@ -7,7 +7,7 @@ form {
     border: 3px solid #64FFDA;
     padding: 20px;
     width: 300px;
-     margin: 25px auto;
+    margin: 25px auto;
     background-color: #0A192F;
     border-radius:5px;
 }
@@ -63,6 +63,7 @@ label{
 input:focus {
     color:#CCD6F6;
 }
+
 
 
 

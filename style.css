@@ -341,7 +341,7 @@ form {
     border-radius:5px;
     float:left;
 }
-input[type=email], input[type=password],input[type=name] {
+input[type=email], input[type=password],input[type=name],input[type=text] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;

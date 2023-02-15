@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio</title>
@@ -197,18 +196,18 @@
         </div>
         <div class="column" >
 
-    <form>
+    <form name="form">
     <h2 id="leave-a-note">Leave a note</h2>
 
         <div class="container2">
-    <label ><b>Email</b></label>      <input type="email" placeholder="Enter your email" name="First-name" required>
+    <label ><b>Email</b></label>      <input type="text" placeholder="Enter your email" name="First-name" required>
 
-    <label><b>Name</b></label>       <input type="Email" placeholder="Enter your name" name="second-name" required>
+    <label><b>Name</b></label>       <input type="text" placeholder="Enter your name" name="second-name" required>
 
     <label ><b>Message</b></label>    <input type="name" placeholder="Write your message" name="email" required>
 
 
-    <button class="button2" type="submit">Submit</button>
+    <button class="button2" type="submit" onclick="ValidateEmail(document.form.email)">Submit</button>
   </div>
       </form>
 
@@ -243,6 +242,21 @@
             x.className += " responsive";
         } else {
             x.className = "topnav";
+        }
+    }
+    function ValidateEmail(inputText)
+    {
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(inputText.value.match(mailformat))
+        {
+            document.form.email.focus();
+            return true;
+        }
+        else
+        {
+            alert("Please Enter valid email");
+            document.form.email.focus();
+            return false;
         }
     }
 
