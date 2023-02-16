@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="trash.css">
+  <script src="https://kit.fontawesome.com/03d0a7c683.js" crossorigin="anonymous"></script>
+  <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+  />
+  <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Fira Code:wght@400&display=swap"
+  />
+  <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inria Sans:wght@700&display=swap"
+  />
+  <style>
+    @font-face {
+      font-family: "Calibri";
+      src: url("./calibri.ttf");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Calibri";
+      src: url("./calibri-bold.ttf");
+      font-weight: 700;
+    }
+  </style>
+  <title>Dashboard</title>
+</head>
+<body>
+<div class="navigation">
+  <div class="profile"><img src="img_avatar2.png" style="width: 135px; height: 134px;" alt="">
+    <span class="name">Niyonizeye Faustin</span>
+  </div>
+  <div class="title-1" id="admin-portal">Welcome to Admin potral<br> <br> <span id="admin">ADMIN DASHBOARD</span>
+
+  </div>
+
+  <div class="logout-search">
+    <a href="index.html"> <button id="logout" >Logout</button></a>
+    <span id="search" >search</span><i class="fa fas-search"></i>
+    <input id="search-input" type="text" placeholder="search">
+  </div>
+</div>
+<div class="all-in">
+  <div class="menus">
+    <nav>
+      <ul>
+        <li>
+          <i class="fa-solid fa-house fa-2x"></i>
+          <a href="./dashbordyy.html">Home</a>
+          <i class="fa-solid fa-circle-plus fa-2x"></i><br>
+          <a href="./addblog.html">Add blog</a>
+          <i class="fa-solid fa-upload fa-2x"></i>
+          <a href="./published.html">published</a>
+          <i class="fa-solid fa-pen-to-square fa-2x"></i>
+          <a href="./draft.html">Drafts</a>
+          <i class="fa-solid fa-message fa-2x"></i>
+          <a href="./messages.html">Messages</a>
+          <i class="fa-regular fa-trash-can fa-2x"></i><br>
+          <a href="./trash.html">Trash</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="container">
+    <div class="boxes">
+      <div class="box1"> <i class="fa-solid fa-upload fa-4x"></i><br>Published <br><span>12,000</span></div>
+      <div class="box2"><i class="fa-solid fa-box-archive fa-4x"></i><br>Archived <span><br>12,000</span></div>
+      <div class="box3"><i class="fa-solid fa-pen-to-square fa-4x"></i><br>Draft <span><br>12,000</span></div>
+      <div class="box4"><i class="fa-solid fa-message fa-4x"></i><br>Messages <span><br>12,000</span></div>
+    </div>
+    <div class="blogs-all">
+      <div class="blogs">
+        <div class="title"><span>Programming concept</span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac
+            tempor neque. Sed congue eros sodales, gravida augue commodo, mollis quam. Aenean sed suscipit libero, vel viverra nulla. Duis tincidunt accumsan mi id malesuada.
+            In dignissim sollicitudin arcu quis condimentum. Duis ut orci nisl. Quisque est turpis, sollicitudin tincidunt viverra sed, dapibus nec neque.</p>
+          <button type="button">restore</button> <button class="delete" type="button">Delete</button>
+        </div>
+      </div>
+      <div class="blogs">
+        <div class="title"><span>Programming concept</span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac tempor neque. Sed congue eros sodales, gravida augue commodo, mollis quam. Aenean sed suscipit libero, vel viverra nulla. Duis tincidunt accumsan mi id malesuada.
+            In dignissim sollicitudin arcu quis condimentum. Duis ut orci nisl. Quisque est turpis, sollicitudin tincidunt viverra sed, dapibus nec neque.</p>
+          <button type="button">Restore</button> <button type="button">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
