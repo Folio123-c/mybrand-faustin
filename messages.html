@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="dash2.css">
+  <link rel="stylesheet" href="messages.css">
   <script src="https://kit.fontawesome.com/03d0a7c683.js" crossorigin="anonymous"></script>
   <link
           rel="stylesheet"
@@ -21,12 +21,12 @@
   <style>
     @font-face {
       font-family: "Calibri";
-      src: url("calibri.ttf");
+      src: url("WebstormProjects/mybrand-faustin/calibri.ttf");
       font-weight: 400;
     }
     @font-face {
       font-family: "Calibri";
-      src: url("calibri-bold.ttf");
+      src: url("WebstormProjects/mybrand-faustin/calibri-bold.ttf");
       font-weight: 700;
     }
   </style>
@@ -55,13 +55,13 @@
           <i class="fa-solid fa-house fa-2x"></i>
           <a href="dashbordyy.html">Home</a>
           <i class="fa-solid fa-circle-plus fa-2x"></i><br>
-          <a href="./addblog.html">Add blog</a>
+          <a href="addblog.html">Add blog</a>
           <i class="fa-solid fa-upload fa-2x"></i>
           <a href="published.html">published</a>
           <i class="fa-solid fa-pen-to-square fa-2x"></i>
           <a href="draft.html">Drafts</a>
           <i class="fa-solid fa-message fa-2x"></i>
-          <a href="messages.html">Messages</a>
+          <a href="./messages">Messages</a>
           <i class="fa-regular fa-trash-can fa-2x"></i><br>
           <a href="trash.html">Trash</a>
         </li>
@@ -78,19 +78,45 @@
     </div>
     <div class="blogs-all">
       <div class="blogs">
-        <div class="title"><span> Add blog</span><form>
-          <label for="name">Title:</label>
-          <input type="text" id="name" name="name" required>
-
-          <label for="message">Blog:</label>
-          <textarea id="message" name="message" required></textarea>
-          <button type="submit">Exit</button> <button type="submit">Save as draft</button> <button type="submit">Publish</button>
-
-        </form>
+        <div class="title"><span> Messages</span>
+          <div class="grid-container">
+          <div class="grid-item"><div class="title"><span>Message</span>
+            <div>Name : faustin</div>
+            <div>Email : faustin@gmail.com</div>
+            <div>Message: Lorem ipsum dolor sit amet
+              consectetur
+              adipiscing elit</div><br>
+            <button type="button">Edit</button> <button type="button">Delete</button>
+          </div></div>
+          <div class="grid-item"><div class="title"><span>Message</span>
+            <div>Name : faustin</div>
+            <div>Email : faustin@gmail.com</div>
+            <div>Message: Lorem ipsum dolor sit amet
+              consectetur
+              adipiscing elit</div><br>
+            <button type="button">Edit</button> <button type="button">Delete</button>
+          </div></div>
+          <div class="grid-item"><div class="title"><span>Message</span>
+            <div>Name : faustin</div>
+            <div>Email : faustin@gmail.com</div>
+            <div>Message: Lorem ipsum dolor sit amet
+              consectetur
+              adipiscing elit</div><br>
+            <button type="button">Reply</button> <button type="button">Delete</button>
+          </div></div>
+          <div class="grid-item"><div class="title"><span>Message</span>
+            <div>Name : faustin</div>
+            <div>Email : faustin@gmail.com</div>
+            <div>Message: Lorem ipsum dolor sit amet
+              consectetur
+              adipiscing elit</div><br>
+            <button type="button">Reply</button> <button type="button">Delete</button>
+          </div></div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 
 </body>
