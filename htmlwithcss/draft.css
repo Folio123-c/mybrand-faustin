@@ -43,14 +43,10 @@ body{
     justify-content: center;
     display: flex;
     padding: 5px;
-
-
 }
 nav{
     display: flex;
     padding: 10px 10%;
-
-
 }
 nav ul li{
     display: block;
