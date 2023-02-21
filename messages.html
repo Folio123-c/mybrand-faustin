@@ -32,7 +32,7 @@
   </style>
   <title>Dashboard</title>
 </head>
-<body>
+<body onload="adminRetrieveBlogs()">
 <div class="navigation">
   <div class="profile"><img src="img_avatar2.png" style="width: 135px; height: 134px;" alt="">
     <span class="name">Niyonizeye Faustin</span>
@@ -77,48 +77,17 @@
       <div class="box4"><i class="fa-solid fa-message fa-4x"></i><br>Messages <span><br>12,000</span></div>
     </div>
     <div class="blogs-all">
-      <div class="blogs">
-        <div class="title"><span> Messages</span>
-          <div class="grid-container">
-          <div class="grid-item">
-            <div class="title"><span>Message</span>
-            <div>Name : faustin</div>
-            <div>Email : faustin@gmail.com</div>
-            <div>Message: Lorem ipsum dolor sit amet
-              consectetur
-              adipiscing elit</div><br>
-            <button type="button">Edit</button> <button type="button">Delete</button>
-          </div></div>
-          <div class="grid-item"><div class="title"><span>Message</span>
-            <div>Name : faustin</div>
-            <div>Email : faustin@gmail.com</div>
-            <div>Message: Lorem ipsum dolor sit amet
-              consectetur
-              adipiscing elit</div><br>
-            <button type="button">Edit</button> <button type="button">Delete</button>
-          </div></div>
-          <div class="grid-item"><div class="title"><span>Message</span>
-            <div>Name : faustin</div>
-            <div>Email : faustin@gmail.com</div>
-            <div>Message: Lorem ipsum dolor sit amet
-              consectetur
-              adipiscing elit</div><br>
-            <button type="button">Reply</button> <button type="button">Delete</button>
-          </div></div>
-          <div class="grid-item"><div class="title"><span>Message</span>
-            <div>Name : faustin</div>
-            <div>Email : faustin@gmail.com</div>
-            <div>Message: Lorem ipsum dolor sit amet
-              consectetur
-              adipiscing elit</div><br>
-            <button type="button">Reply</button> <button type="button">Delete</button>
-          </div></div>
-        </div>
-      </div>
-    </div>
+<!--      <div class="blogs" >-->
+<!--        <div class="title"><span id="blog-title">Programming concept</span>-->
+<!--          <p id="blog-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac tempor neque. Sed congue eros sodales, gravida augue commodo, mollis quam. Aenean sed suscipit libero, vel viverra nulla. Duis tincidunt accumsan mi id malesuada.-->
+<!--            In dignissim sollicitudin arcu quis condimentum. Duis ut orci nisl. Quisque est turpis, sollicitudin tincidunt viverra sed, dapibus nec neque.</p>-->
+<!--          <button type="button">Edit</button> <button type="button">Delete</button>-->
+<!--        </div>-->
+<!--      </div>-->
   </div>
 </div>
 </div>
 
 </body>
+<script src="./js/messageRetrieve.js"></script>
 </html>
