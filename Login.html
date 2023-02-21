@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-<form name="form">
+<form name="form" action="dashbordyy.html" onsubmit="return logedin()">
     <div class="imgcontainer">
         <img src="img_avatar2.png" alt="Avatar" class="avatar">
     </div>
@@ -24,7 +24,7 @@
             <input type="password" id="password"placeholder="Enter Password" name="psw" required>
         </label>
 
-        <a ><button type="submit" id="login" onclick="ValidateEmail(document.form.email)">Login</button></a>
+        <a ><button type="submit" id="login" >Login</button></a>
         <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
         </label>
@@ -36,24 +36,24 @@
 
 </form>
 <script>
-    function ValidateEmail(inputText)
-    {
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        if(inputText.value.match(mailformat))
-        {
-            document.form.email.focus();
-            return true;
-        }
-        else
-        {
-            alert("Please enter valid email");
-            document.form.email.focus();
-            return false;
-        }
-    }
+    // function ValidateEmail(inputText)
+    // {
+    //     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    //     if(inputText.value.match(mailformat))
+    //     {
+    //         document.form.email.focus();
+    //         return true;
+    //     }
+    //     else
+    //     {
+    //         alert("Please enter valid email");
+    //         document.form.email.focus();
+    //         return false;
+    //     }
+    // }
 
 
 </script>
 </body>
-<script  src="js/signin.js"></script>
+<script  src="./js/signin.js"></script>
 </html>

@@ -32,7 +32,7 @@
   </style>
   <title>Dashboard</title>
 </head>
-<body>
+<body onload="editBlog()">
 <div class="navigation">
   <div class="profile"><img src="img_avatar2.png" style="width: 135px; height: 134px;" alt="">
     <span class="name">Niyonizeye Faustin</span>
@@ -78,13 +78,13 @@
     </div>
     <div class="blogs-all">
       <div class="blogs">
-        <div class="title"><span> Add blog</span><form>
+        <div class="title"><span id="editTitle"> Add blog</span><form>
           <label for="name">Title:</label>
           <input type="text" id="name" name="name" required>
 
           <label for="message">Blog:</label>
           <textarea id="message" name="message" required></textarea>
-          <button type="submit">Exit</button> <button type="submit">Save as draft</button> <button type="submit">Publish</button>
+          <button type="submit" id="exit">Exit</button> <button type="submit" id="draft">Save as draft</button> <button type="submit" id="publish">Publish</button>
 
         </form>
         </div>
@@ -94,4 +94,6 @@
 </div>
 
 </body>
+<script  src="./js/addblog.js"></script>
+<script src="./js/drafts.js"></script>
 </html>

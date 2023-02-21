@@ -32,7 +32,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="adminRetrieveBlogs()">
 <div  class="homepage" id="frame-1">
 <div class="navbar">
     <nav class="topnav" id="myTopnav">
@@ -151,35 +151,35 @@
 <section class="blogs" id="blogs">
     <h1 id="blog1">Blogs</h1>
     <div class="flex-container">
-        <div class="item1"><h2>Programming concept<br><br><br><br></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                iaculis lectus vel metus pellentesque, eu venenatis est euismod.
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-                per inceptos himenaeos. Phasellus eget lacinia ipsum. Aenean gravida
-                interdum enim, nec rhoncus orci mollis et. Maecenas posuere sed libero
-                id porta. Aenean finibus nulla metus, vitae </p><br>
-            <div ><button class="btn" type="submit">Read more</button></div>
-        </div>
+<!--        <div class="item1"><h2>Programming concept<br><br><br><br></h2>-->
+<!--            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque-->
+<!--                iaculis lectus vel metus pellentesque, eu venenatis est euismod.-->
+<!--                Class aptent taciti sociosqu ad litora torquent per conubia nostra,-->
+<!--                per inceptos himenaeos. Phasellus eget lacinia ipsum. Aenean gravida-->
+<!--                interdum enim, nec rhoncus orci mollis et. Maecenas posuere sed libero-->
+<!--                id porta. Aenean finibus nulla metus, vitae </p><br>-->
+<!--            <div ><button class="btn" type="submit">Read more</button></div>-->
+<!--        </div>-->
 
-        <div class="item1"><h2>Javascript concept<br><br><br><br></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                iaculis lectus vel metus pellentesque, eu venenatis est euismod.
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-                per inceptos himenaeos. Phasellus eget lacinia ipsum. Aenean gravida
-                interdum enim, nec rhoncus orci mollis et. Maecenas posuere sed libero
-                id porta. Aenean finibus nulla metus, vitae </p><br>
-            <div ><button class="btn" type="submit">Read more</button></div>
-        </div>
+<!--        <div class="item1"><h2>Javascript concept<br><br><br><br></h2>-->
+<!--            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque-->
+<!--                iaculis lectus vel metus pellentesque, eu venenatis est euismod.-->
+<!--                Class aptent taciti sociosqu ad litora torquent per conubia nostra,-->
+<!--                per inceptos himenaeos. Phasellus eget lacinia ipsum. Aenean gravida-->
+<!--                interdum enim, nec rhoncus orci mollis et. Maecenas posuere sed libero-->
+<!--                id porta. Aenean finibus nulla metus, vitae </p><br>-->
+<!--            <div ><button class="btn" type="submit">Read more</button></div>-->
+<!--        </div>-->
 
 
-        <div class="item1"><h2>Programming concept <br><br><br><br></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                iaculis lectus vel metus pellentesque, eu venenatis est euismod.
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-                per inceptos himenaeos. Phasellus eget lacinia ipsum. Aenean gravida
-                interdum enim, nec rhoncus orci mollis et. Maecenas posuere sed libero
-                id porta. Aenean finibus nulla metus, vitae </p><br>
-            <div ><button class="btn" type="submit">Read more</button></div></div>
+<!--        <div class="item1"><h2>Programming concept <br><br><br><br></h2>-->
+<!--            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque-->
+<!--                iaculis lectus vel metus pellentesque, eu venenatis est euismod.-->
+<!--                Class aptent taciti sociosqu ad litora torquent per conubia nostra,-->
+<!--                per inceptos himenaeos. Phasellus eget lacinia ipsum. Aenean gravida-->
+<!--                interdum enim, nec rhoncus orci mollis et. Maecenas posuere sed libero-->
+<!--                id porta. Aenean finibus nulla metus, vitae </p><br>-->
+<!--            <div ><button class="btn" type="submit">Read more</button></div></div>-->
 
     </div>
 </section>
@@ -200,14 +200,14 @@
     <h2 id="leave-a-note">Leave a note</h2>
 
         <div class="container2">
-    <label ><b>Email</b></label>      <input type="text" placeholder="Enter your email" name="First-name" required>
+    <label ><b>Email</b></label>      <input type="text" id="email"placeholder="Enter your email" name="First-name" required>
 
-    <label><b>Name</b></label>       <input type="text" placeholder="Enter your name" name="second-name" required>
+    <label><b>Name</b></label>       <input type="text" id="name" placeholder="Enter your name" name="second-name" required>
 
-    <label ><b>Message</b></label>    <input type="name" placeholder="Write your message" name="email" required>
+    <label ><b>Message</b></label>    <input type="name" id="messages"placeholder="Write your message" name="email" required>
 
 
-    <button class="button2" type="submit" onclick="ValidateEmail(document.form.email)">Submit</button>
+    <button class="button2" id="send" type="submit">Submit</button>
   </div>
       </form>
 
@@ -261,5 +261,8 @@
     }
 
 </script>
+
+<script  src="./js/Messages.js"></script>
+<script src="./js/index.js"></script>
 
 </html>

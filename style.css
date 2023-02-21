@@ -432,10 +432,8 @@ input[type=email], input[type=password],input[type=name],input[type=text] {
     color: #64FFDA;
     text-decoration: none;
     text-align: center;
-
-
-
 }
+
 .footer{
     font-family: 'Calibri';
     font-style: normal;
@@ -447,6 +445,7 @@ input[type=email], input[type=password],input[type=name],input[type=text] {
     line-height: 200px;
 
 }
+
 .item1 h2{
     color: #CCD6F6;
 }
