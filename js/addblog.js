@@ -46,6 +46,7 @@ function saveDraft(post) {
     const draftPosts = getDraftPosts();
     draftPosts.push(post);
     localStorage.setItem(DRAFT_POSTS_KEY, JSON.stringify(draftPosts));
+    alert("Blog saved as draft");
 }
 
 function getDraftPosts() {
@@ -56,6 +57,7 @@ function publishPost(post) {
     const publishedPosts = getPublishedPosts();
     publishedPosts.push(post);
     localStorage.setItem(PUBLISHED_POSTS_KEY, JSON.stringify(publishedPosts));
+    alert("Blog published Successfully");
 }
 
 function getPublishedPosts() {
