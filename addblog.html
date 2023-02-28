@@ -62,8 +62,6 @@
           <a href="draft.html">Drafts</a>
           <i class="fa-solid fa-message fa-2x"></i>
           <a href="messages.html">Messages</a>
-          <i class="fa-regular fa-trash-can fa-2x"></i><br>
-          <a href="trash.html">Trash</a>
         </li>
       </ul>
     </nav>
@@ -71,10 +69,10 @@
 
   <div class="container">
     <div class="boxes">
-      <div class="box1"> <i class="fa-solid fa-upload fa-4x"></i><br>Published <br><span>19</span></div>
-      <div class="box2"><i class="fa-solid fa-box-archive fa-4x"></i><br>Archived <span><br>12</span></div>
-      <div class="box3"><i class="fa-solid fa-pen-to-square fa-4x"></i><br>Draft <span><br>13</span></div>
-      <div class="box4"><i class="fa-solid fa-message fa-4x"></i><br>Messages <span><br>16</span></div>
+      <div class="box1"> <i class="fa-solid fa-upload fa-4x"></i><br>Published <br><span id="pub">19</span></div>
+      <div class="box2"><i class="fa-solid fa-box-archive fa-4x"></i><br>Archived <br><span id="draf"><br>12</span></div>
+      <div class="box3"><i class="fa-solid fa-pen-to-square fa-4x"></i><br>Draft <br><span id="drafs"><br>13</span></div>
+      <div class="box4"><i class="fa-solid fa-message fa-4x"></i><br>Messages <br><span id="messa"><br>16</span></div>
     </div>
     <div class="blogs-all">
       <div class="blogs">
@@ -87,6 +85,7 @@
           <button type="submit" id="exit">Exit</button> <button type="submit" id="draft">Save as draft</button> <button type="submit" id="publish">Publish</button>
 
         </form>
+          <span id="hiden-edit" style="display:none">save</span>
         </div>
       </div>
     </div>
@@ -96,4 +95,7 @@
 </body>
 <script  src="./js/addblog.js"></script>
 <script src="./js/drafts.js"></script>
+<script src="./js/dashboardNumbers.js"></script>
+
+
 </html>

@@ -1,0 +1,32 @@
+#nano{
+    width: auto;
+    height: auto;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    color: #022963;
+
+}
+
+#mess{
+    font-family: Calibri;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+
+}
+.blogs{
+    display: flex;
+    width: auto;
+    height: auto;
+    margin: 20px;
+    background: #D9D9D9;
+    border-radius: 13px;
+    margin-top: 40px;
+}
+.contact-me{
+
+    padding: 50px 5%;
+    justify-content: space-between;
+    background: #0A192F;
+}

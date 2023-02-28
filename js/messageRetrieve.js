@@ -23,4 +23,3 @@ function deleteBlog(index){
     localStorage.setItem('messageboxes', JSON.stringify(allBlogs));
     window.location.reload();
 }
-

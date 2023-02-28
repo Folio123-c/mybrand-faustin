@@ -26,8 +26,9 @@ function handleSubmit(event) {
 function handleSaveDraft(event) {
     const title = form.elements['name'].value;
     const content = form.elements['message'].value;
+    const blogId = document.getElementById('hiden-edit').textContent;
     // Store the post as a draft
-    saveDraft({ title, content });
+    saveDraft({ title, content, blogId });
     // Clear the form
     form.reset();
 }
@@ -43,10 +44,25 @@ function handlePublish(event) {
 
 // Define the functions for storing the posts
 function saveDraft(post) {
-    const draftPosts = getDraftPosts();
-    draftPosts.push(post);
-    localStorage.setItem(DRAFT_POSTS_KEY, JSON.stringify(draftPosts));
-    alert("Blog saved as draft");
+    let action = document.getElementById('draft').textContent;
+    if(action !== 'Update') {
+        const draftPosts = getDraftPosts();
+        draftPosts.push(post);
+        localStorage.setItem(DRAFT_POSTS_KEY, JSON.stringify(draftPosts));
+        alert("Blog saved as draft");
+    } else {
+        let urlParams = new URLSearchParams(window.location.search);
+        let blogId = urlParams.get('id');
+        let allBlogs = JSON.parse(localStorage.getItem('draft_posts'));
+        for(let i = allBlogs.length - 1; i >= 0 ; i--){
+            if(i === Number(blogId)) {
+                allBlogs[i].title = post.title;
+                allBlogs[i].content = post.content
+            }
+        }
+        localStorage.setItem('draft_posts', JSON.stringify(allBlogs));
+        alert("Blog has been updated");
+    }
 }
 
 function getDraftPosts() {
@@ -74,4 +90,5 @@ console.log(allblogs);
 for(let i=0; i< title.length; i++){
     title[i].innerHTML=allblogs[i].title;
     content[i].innerHTML=allblogs[i].content;
+
 }

@@ -1,7 +1,7 @@
 body{
     padding: 0;
     margin: 0;
-    background-color: #BCD6F5;
+    background-color: #0A192F;
 }
 form {
     border: 3px solid #64FFDA;
@@ -64,6 +64,16 @@ input:focus {
     color:#CCD6F6;
 }
 
+#signup{
+    color: #64FFDA;
+    text-decoration: none;
+}
+#signup2{
+    color: #64FFDA;
+    text-decoration: none;
+    float: right;
+
+}
 
 
 

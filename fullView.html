@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>portfolio</title>
+  <script src="https://kit.fontawesome.com/03d0a7c683.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="fullView.css">
+  <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+  />
+  <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Fira Code:wght@400&display=swap"
+  />
+  <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inria Sans:wght@700&display=swap"
+  />
+  <style>
+    @font-face {
+      font-family: "Calibri";
+      src: url("WebstormProjects/mybrand-faustin/calibri.ttf");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Calibri";
+      src: url("WebstormProjects/mybrand-faustin/calibri-bold.ttf");
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+<div  class="homepage" id="frame-1">
+  <div class="navbar">
+    <nav class="topnav" id="myTopnav">
+      <img src="Group-77.svg" alt="">
+
+
+      <ul>
+        <li>
+          <a href="./index.html">Home</a>
+          <a href="./index.html">About me</a>
+          <a href="./index.html">Skills</a>
+          <a href="./index.html">Portfolio</a>
+          <a href="./index.html">blogs</a>
+          <a href="./index.html">Contact me</a>
+          <a href="Login.html"> <button>Login</button></a>
+        </li>
+      </ul>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction2()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </nav>
+  </div>
+</div>
+<section class="blogs" id="blogs">
+  <div id="nano"></div>
+  <div id="mess"></div>
+
+  </div>
+</section>
+
+<section class="contact-me" id="contactme">
+  <h1 class="title" id="contact--me">Leave a comment</h1>
+  <div class="row">
+
+    <div class="column" >
+
+      <form name="form">
+        <div class="container2">
+          <label ><b>Email</b></label>      <input type="text" id="email"placeholder="Enter your email" name="First-name" required>
+
+          <label><b>Name</b></label>       <input type="text" id="name" placeholder="Enter your name" name="second-name" required>
+
+          <label ><b>Comment</b></label>    <input type="name" id="messages"placeholder="Write your comment" name="email" required>
+
+
+          <button class="button2" id="send" type="submit">Submit</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+
+</section>
+</body>
+<script>
+  window.onscroll = function() {myFunction()};
+
+  let navbar = document.querySelector(".navbar");
+
+  let sticky = navbar.offsetTop;
+
+  // function myFunction() {
+  //   if (window.pageYOffset >= sticky) {
+  //     navbar.classList.add("sticky")
+  //   } else {
+  //     navbar.classList.remove("sticky");
+  //   }
+  // }
+  function myFunction2() {
+    let x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  // function ValidateEmail(inputText)
+  // {
+  //   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  //   if(inputText.value.match(mailformat))
+  //   {
+  //     document.form.email.focus();
+  //     return true;
+  //   }
+  //   else
+  //   {
+  //     alert("Please Enter valid email");
+  //     document.form.email.focus();
+  //     return false;
+  //   }
+  // }
+
+</script>
+
+<script  src="./js/Messages.js"></script>
+<script src="./js/fullView.js"></script>
+
+</html>

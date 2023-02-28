@@ -59,7 +59,7 @@ function logedin(){
         return true;
     }
     else{
-        alert("wrong password or email is wong\n\n or sign up");
+        alert("Wrong credentials\n\n or sign up");
         // console.log("Password" + targetUser.password);
     }
     return false;

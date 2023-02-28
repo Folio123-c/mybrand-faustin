@@ -17,4 +17,3 @@ function sendMessage() {
 }
 
 submit.onclick = sendMessage;
-
