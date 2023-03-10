@@ -23,5 +23,8 @@ formSignUp.addEventListener("submit", (event) => {
         .then((data) => {
             alert(data.message);
         })
-        .catch((error) => alert(error));
+        .catch((error) => {
+            console.error(error);
+            alert("An error occurred during sign-up. Please try again later.");
+        });
 });

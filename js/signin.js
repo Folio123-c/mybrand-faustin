@@ -1,31 +1,3 @@
-// function logedin(event) {
-//     event.preventDefault(); // prevent the form from submitting
-//
-//     const email = document.getElementById("email").value;
-//     const password = document.getElementById("password").value;
-//
-//     const response = fetch("https://mybrand-faustin.cyclic.app/api/v1/login", {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({ email, password }),
-//     });
-//     response.then(res => res.json())
-//         .then(data => {
-//             localStorage.setItem('token', JSON.stringify(data.token))
-//             window.location.href = "dashbordyy.html"; // redirect to dashboard page
-//         })
-//         .catch((error) => alert(error));
-// }
-//
-//
-// const form = document.getElementById("login-form");
-
-// add event listen
-// form.addEventListener("submit", (e) => {
-//     e.preventDefault();
-    //grad values
 async function userLogin(){
     const emailValue = document.getElementById("email").value
     const passwordValue = document.getElementById("password").value
@@ -44,15 +16,12 @@ async function userLogin(){
             if (data.token) {
                 // set our token in LS
                 localStorage.setItem('token', JSON.stringify(data.token))
-                alert(data)
+                alert(data.message)
                 location.href="dashbordyy.html" ; // redirect to dashboard page
             } else {
-                alert("Failed to login")
+                alert(data.message)
             }
         })
         .catch(err => alert(err))
 };
 
-// function userLogin(){
-//     console.log('Called')
-// }

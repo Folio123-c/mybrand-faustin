@@ -1,46 +1,57 @@
-
-// let title= document.querySelectorAll('#blog-title');
-// let content= document.querySelectorAll('#blog-p')
-// let blog=document.querySelectorAll('#blogs')
-//
-// let allblogs=JSON.parse(localStorage.getItem('draft_posts'))
-// console.log("allblogs");
-// console.log(allblogs);
-// for(let i=0; i< title.length; i++){
-//     title[i].innerHTML=allblogs[i].title;
-//     content[i].innerHTML=allblogs[i].content;
-// }
-
 function adminRetrieveBlogs(){
     let blogsContainer = document.querySelector('.blogs-all');
-    let allblogs=JSON.parse(localStorage.getItem('draft_posts'));
     let blogId;
+    const token = JSON.parse(localStorage.getItem('token'));
+    let count = 0;
+
+    fetch("https://mybrand-faustin.cyclic.app/api/v1/draft", {
+        headers: {
+            "Authorization": token
+        }
+    })
+        .then((resp) => {
+            return resp.json();
+        })
+        .then((data) => {
+            // console.log(data.data);
+            const allblogs = data.data;
     for(let i = allblogs.length - 1; i >= 0; i--){
-        console.log(allblogs[i].index);
         let blog = `<div class="blogs" id="blogs">
-        <div class="title"><span id="blog-title">${allblogs[i].title}</span>
-          <p id="blog-p">${allblogs[i].content}</p>
-          <button type="button" onclick="redirectToEddBog('${i}')">Edit</button> 
-          <button class="delete" id=${i} type="button" onclick="deleteBlog('${i}')">Delete</button>
-        </div>
-      </div>`
+                <div class="title"><span id="blog-title">${allblogs[i].title}</span><br>
+                     <span id="image"><img src="${allblogs[i].image}" style= "width:150px; height:150px; border-radius: 23px;"></span>
+                    <p id="blog-p">${allblogs[i].content}</p>
+                    <button type="button" onclick="redirectToEddBog('${allblogs[i]._id}')">Edit</button>
+                      <button class="delete" id=${i} type="button" onclick="deleteBlog('${allblogs[i]._id}')">Delete</button>
+                    </div>
+              </div>`
         blogsContainer.innerHTML += blog;
     }
+        })
+.catch((error) => alert(error));
 }
 
 
-function deleteBlog(index){
-    let allBlogs = JSON.parse(localStorage.getItem('draft_posts'));
-    allBlogs.splice(index, 1);
-    localStorage.setItem('draft_posts', JSON.stringify(allBlogs));
+
+async function deleteBlog(index){
+    console.log(index);
+    const token = JSON.parse(localStorage.getItem('token'));
+    await fetch(`https://mybrand-faustin.cyclic.app/api/v1/draft/${index}`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": token
+        }
+    })
+        .then((resp) => {
+            return resp.json();
+        })
+        .then((data) => {
+            console.log(data);
+            // alert(data.message);
+        })
+        .catch((error) => alert(error));
+
+    alert("Blog has been deleted successfully")
     window.location.reload();
-}
-
-let blogAction = '';
-
-function redirectToEddBog(blogId){
-    // document.getElementById('hiden-edit').textContent;
-    window.location.href = `./addblog.html?action=edit&id=${blogId}`
 }
 
 async function  editBlog(){
@@ -77,36 +88,13 @@ async function  editBlog(){
             })
             .catch((error) => alert(error));
 
-        // let allBlogs = JSON.parse(localStorage.getItem('draft_posts'));
-        // console.log(allBlogs);
-        // for(let i = allBlogs.length - 1; i >= 0 ; i--){
-        //     if(i === Number(blogId)) {
-        //         document.getElementById('editTitle').textContent = 'Edit blog';
-        //         document.getElementById('draft').textContent = 'Update';
-        //         document.getElementById('publish').textContent = 'publish';
-        //         blogTitle.value = allBlogs[i].title;
-        //         blogContent.innerHTML = allBlogs[i].content;
-        //
-        //     }
-        // }
+
     } else {
-        // await fetch(`http://localhost:5000/api/v1/blogs`, {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         "Authorization": token
-        //     },
-        //     body: JSON.stringify({title: blogTitle, image: image, content: blogContent}),
-        // })
-        //     .then((resp) => {
-        //         return resp.json();
-        //     })
-        //     .then((data) => {
-        //         console.log(data);
-        //         // alert(data.message);
-        //     })
-        //     .catch((error) => alert(error));
+
     }
+}
+function redirectToEddBog(blogId){
+    window.location.href = `./addblog.html?action=edit&id=${blogId}`
 }
 
 // function  editBlogPub(){

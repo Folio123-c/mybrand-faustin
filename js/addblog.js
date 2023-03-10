@@ -9,8 +9,8 @@ saveDraftBtn.addEventListener('click', handleSaveDraft);
 publishBtn.addEventListener('click', handlePublish);
 
 // Define the local storage keys
-const PUBLISHED_POSTS_KEY = 'published_posts';
-const DRAFT_POSTS_KEY = 'draft_posts';
+// const PUBLISHED_POSTS_KEY = 'published_posts';
+// const DRAFT_POSTS_KEY = 'draft_posts';
 
 // Define the handlers for the form and buttons
 function handleSubmit(event) {
@@ -99,9 +99,9 @@ async function saveDraft(post) {
     }
 }
 
-function getDraftPosts() {
-    return JSON.parse(localStorage.getItem(DRAFT_POSTS_KEY)) || [];
-}
+// function getDraftPosts() {
+//     return JSON.parse(localStorage.getItem(DRAFT_POSTS_KEY)) || [];
+// }
 
 function publishPost(post) {
     // const publishedPosts = getPublishedPosts();
@@ -128,19 +128,19 @@ function publishPost(post) {
     alert("Blog published Successfully");
 }
 
-function getPublishedPosts() {
-    return JSON.parse(localStorage.getItem(PUBLISHED_POSTS_KEY)) || [];
-}
-
-
-let title= document.querySelectorAll('#blog-title');
-let content= document.querySelectorAll('#blog-p')
-
-let allblogs=JSON.parse(localStorage.getItem('draft_posts'))
-console.log("allblogs");
-console.log(allblogs);
-for(let i=0; i< title.length; i++){
-    title[i].innerHTML=allblogs[i].title;
-    content[i].innerHTML=allblogs[i].content;
-
-}
+// function getPublishedPosts() {
+//     return JSON.parse(localStorage.getItem(PUBLISHED_POSTS_KEY)) || [];
+// }
+//
+//
+// let title= document.querySelectorAll('#blog-title');
+// let content= document.querySelectorAll('#blog-p')
+//
+// let allblogs=JSON.parse(localStorage.getItem('draft_posts'))
+// console.log("allblogs");
+// console.log(allblogs);
+// for(let i=0; i< title.length; i++){
+//     title[i].innerHTML=allblogs[i].title;
+//     content[i].innerHTML=allblogs[i].content;
+//
+// }
