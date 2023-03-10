@@ -25,10 +25,15 @@ function handleSubmit(event) {
 
 function handleSaveDraft(event) {
     const title = form.elements['name'].value;
+    const image = form.elements['image'].value
     const content = form.elements['message'].value;
-    const blogId = document.getElementById('hiden-edit').textContent;
+    // const blogId = document.getElementById('hiden-edit').textContent;
     // Store the post as a draft
-    saveDraft({ title, content, blogId });
+    let urlParams = new URLSearchParams(window.location.search);
+    // let action = urlParams.get('action');
+    let urlParamsId = new URLSearchParams(window.location.search);
+    let blogId = urlParamsId.get('id');
+    saveDraft({ title, image, content, blogId });
     // Clear the form
     form.reset();
 }
@@ -37,6 +42,11 @@ function handlePublish(event) {
     const title = form.elements['name'].value;
     const content = form.elements['message'].value;
     const image = form.elements['image'].value;
+    // const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDlkMjdiNWFhZDE0Nzg3MmU3ZjEwNiIsImlhdCI6MTY3ODM2NTMzNX0.vGsjwZYPgcS3G4lDmSVjGDvtv7Dr-_QdzLhkS73IOtk'
+    // const hfj = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDlkMjdiNWFhZDE0Nzg3MmU3ZjEwNiIsImlhdCI6MTY3ODM2NTMzNX0.vGsjwZYPgcS3G4lDmSVjGDvtv7Dr-_QdzLhkS73IOtk'
+    // const cookies = {
+    //     token: userToken
+    // }
     // Store the post as published
     publishPost({ title, image, content});
     // Clear the form
@@ -44,25 +54,48 @@ function handlePublish(event) {
 }
 
 // Define the functions for storing the posts
-function saveDraft(post) {
+async function saveDraft(post) {
     let action = document.getElementById('draft').textContent;
-    if(action !== 'Update') {
-        const draftPosts = getDraftPosts();
-        draftPosts.push(post);
-        localStorage.setItem(DRAFT_POSTS_KEY, JSON.stringify(draftPosts));
-        alert("Blog saved as draft");
+    let urlParams = new URLSearchParams(window.location.search);
+    let blogId = urlParams.get('id');
+    const token = JSON.parse(localStorage.getItem('token'));
+    if(action === 'Update') {
+        await fetch(`https://mybrand-faustin.cyclic.app/api/v1/blogs/${blogId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": token
+            },
+            body: JSON.stringify(post)
+        })
+            .then((resp) => {
+                return resp.json();
+            })
+            .then((data) => {
+                console.log(data);
+                // alert(data.message);
+            })
+            .catch((error) => alert(error));
+        alert("Blog has been updated successfully");
     } else {
-        let urlParams = new URLSearchParams(window.location.search);
-        let blogId = urlParams.get('id');
-        let allBlogs = JSON.parse(localStorage.getItem('draft_posts'));
-        for(let i = allBlogs.length - 1; i >= 0 ; i--){
-            if(i === Number(blogId)) {
-                allBlogs[i].title = post.title;
-                allBlogs[i].content = post.content
-            }
-        }
-        localStorage.setItem('draft_posts', JSON.stringify(allBlogs));
-        alert("Blog has been updated");
+        await fetch(`https://mybrand-faustin.cyclic.app/api/v1/draft`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": token
+            },
+            body: JSON.stringify(post)
+        })
+            .then((resp) => {
+                return resp.json();
+            })
+            .then((data) => {
+                console.log(data);
+                // alert(data.message);
+            })
+            .catch((error) => alert(error));
+        alert("Blog has been saved as draft");
+
     }
 }
 
@@ -74,11 +107,12 @@ function publishPost(post) {
     // const publishedPosts = getPublishedPosts();
     // publishedPosts.push(post);
     // localStorage.setItem(PUBLISHED_POSTS_KEY, JSON.stringify(publishedPosts));
-
+    const token = JSON.parse(localStorage.getItem('token'));
     fetch("https://mybrand-faustin.cyclic.app/api/v1/blogs", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            "Authorization": token
         },
         body: JSON.stringify(post),
     })

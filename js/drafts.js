@@ -43,27 +43,69 @@ function redirectToEddBog(blogId){
     window.location.href = `./addblog.html?action=edit&id=${blogId}`
 }
 
-function  editBlog(){
+async function  editBlog(){
     // alert("Editing blog")
     let blogTitle = document.getElementById('name');
+    let image = document.getElementById('image');
     let blogContent = document.getElementById('message');
+
     let urlParams = new URLSearchParams(window.location.search);
     let action = urlParams.get('action');
     let urlParamsId = new URLSearchParams(window.location.search);
     let blogId = urlParamsId.get('id');
+    const token = JSON.parse(localStorage.getItem('token'));
+
     if(action === 'edit'){
-        let allBlogs = JSON.parse(localStorage.getItem('draft_posts'));
-        console.log(allBlogs);
-        for(let i = allBlogs.length - 1; i >= 0 ; i--){
-            if(i === Number(blogId)) {
+        // get blog
+
+        await fetch(`https://mybrand-faustin.cyclic.app/api/v1/blogs/${blogId}`, {
+        })
+            .then((resp) => {
+                return resp.json();
+            })
+            .then((data) => {
+                console.log("retrieved", data);
+                const allBlogs = data.data
+                // alert(data.message);
                 document.getElementById('editTitle').textContent = 'Edit blog';
                 document.getElementById('draft').textContent = 'Update';
                 document.getElementById('publish').textContent = 'publish';
-                blogTitle.value = allBlogs[i].title;
-                blogContent.innerHTML = allBlogs[i].content;
+                    blogTitle.value = allBlogs.title;
+                    image.value = allBlogs.image;
+                    blogContent.innerHTML = allBlogs.content;
 
-            }
-        }
+            })
+            .catch((error) => alert(error));
+
+        // let allBlogs = JSON.parse(localStorage.getItem('draft_posts'));
+        // console.log(allBlogs);
+        // for(let i = allBlogs.length - 1; i >= 0 ; i--){
+        //     if(i === Number(blogId)) {
+        //         document.getElementById('editTitle').textContent = 'Edit blog';
+        //         document.getElementById('draft').textContent = 'Update';
+        //         document.getElementById('publish').textContent = 'publish';
+        //         blogTitle.value = allBlogs[i].title;
+        //         blogContent.innerHTML = allBlogs[i].content;
+        //
+        //     }
+        // }
+    } else {
+        // await fetch(`http://localhost:5000/api/v1/blogs`, {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //         "Authorization": token
+        //     },
+        //     body: JSON.stringify({title: blogTitle, image: image, content: blogContent}),
+        // })
+        //     .then((resp) => {
+        //         return resp.json();
+        //     })
+        //     .then((data) => {
+        //         console.log(data);
+        //         // alert(data.message);
+        //     })
+        //     .catch((error) => alert(error));
     }
 }
 

@@ -1,27 +1,56 @@
  function adminRetrieveBlogs(){
+     let blogsContainer = document.querySelector('.flex-container');
+     // let allblogs=JSON.parse(localStorage.getItem('published_posts'));
+     let blogId;
+     const token = JSON.parse(localStorage.getItem('token'));
 
-    let blogsContainer = document.querySelector('.flex-container');
-    let allblogs=JSON.parse(localStorage.getItem('published_posts'));
-    let blogId;
-    for(let i = allblogs.length - 1; i >= 0; i--){
-
-        // console.log(allblogs[i].index);
-        let blog = `<div class="item1"><h2>${allblogs[i].title}<br><br></h2>
-    <p>${allblogs[i].content} </p><br>
-        <div>
-            <a href="./fullView.html"> <button class="btn" type="submit" id="${i}">Read more</button></a>
+     fetch("https://mybrand-faustin.cyclic.app/api/v1/blogs", {
+         headers: {
+             "Authorization": token
+         }
+     })
+         .then((resp) => {
+             return resp.json();
+         })
+         .then((data) => {
+             // console.log(data.data);
+             const allblogs = data.data;
+             for(let i = allblogs.length - 1; i >= 0; i--){
+                 let blog = `<div class="item1"><h2>${allblogs[i].title}<br><br></h2>
+           <span id="image"><img src="${allblogs[i].image}" style= "width:150px; height:150px; border-radius: 23px;"></span>
+            <p>${allblogs[i].content} </p><br>
+         <div>
+             <a href="./fullView.html"> <button class="btn" type="submit" id="${i}">Read more</button></a>
         </div>
-</div>`
-        blogsContainer.innerHTML += blog;
-    }
+    </div>`
+                 blogsContainer.innerHTML += blog;
+             }
+         })
+         .catch((error) => alert(error));
+
+//
+//     let blogsContainer = document.querySelector('.flex-container');
+//     let allblogs=JSON.parse(localStorage.getItem('published_posts'));
+//     let blogId;
+//     for(let i = allblogs.length - 1; i >= 0; i--){
+//
+//         // console.log(allblogs[i].index);
+//         let blog = `<div class="item1"><h2>${allblogs[i].title}<br><br></h2>
+//     <p>${allblogs[i].content} </p><br>
+//         <div>
+//             <a href="./fullView.html"> <button class="btn" type="submit" id="${i}">Read more</button></a>
+//         </div>
+// </div>`
+//         blogsContainer.innerHTML += blog;
+//     }
  }
-let button=document.querySelectorAll('.btn')
-console.log(button.length);
-    for(let i=0; i<button.length; i++){
-        button[i].addEventListener('click',()=>{
-            console.log(button[i])
-            let index=button[i].getAttribute('id')
-            localStorage.setItem('index',index);
-        })
-    }
+// let button=document.querySelectorAll('.btn')
+// console.log(button.length);
+//     for(let i=0; i<button.length; i++){
+//         button[i].addEventListener('click',()=>{
+//             console.log(button[i])
+//             let index=button[i].getAttribute('id')
+//             localStorage.setItem('index',index);
+//         })
+//     }
 
