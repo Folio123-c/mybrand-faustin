@@ -36,8 +36,9 @@ function handleSaveDraft(event) {
 function handlePublish(event) {
     const title = form.elements['name'].value;
     const content = form.elements['message'].value;
+    const image = form.elements['image'].value;
     // Store the post as published
-    publishPost({ title, content });
+    publishPost({ title, image, content});
     // Clear the form
     form.reset();
 }
@@ -70,9 +71,26 @@ function getDraftPosts() {
 }
 
 function publishPost(post) {
-    const publishedPosts = getPublishedPosts();
-    publishedPosts.push(post);
-    localStorage.setItem(PUBLISHED_POSTS_KEY, JSON.stringify(publishedPosts));
+    // const publishedPosts = getPublishedPosts();
+    // publishedPosts.push(post);
+    // localStorage.setItem(PUBLISHED_POSTS_KEY, JSON.stringify(publishedPosts));
+
+    fetch("https://mybrand-faustin.cyclic.app/api/v1/blogs", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(post),
+    })
+        .then((resp) => {
+            return resp.json();
+        })
+        .then((data) => {
+            console.log(data);
+            // alert(data.message);
+        })
+        .catch((error) => alert(error));
+
     alert("Blog published Successfully");
 }
 
