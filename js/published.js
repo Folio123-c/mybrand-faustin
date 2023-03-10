@@ -3,7 +3,10 @@ function adminRetrieveBlogs(){
     // let allblogs=JSON.parse(localStorage.getItem('published_posts'));
     let blogId;
     const token = JSON.parse(localStorage.getItem('token'));
-
+    // let countAll = JSON.parse(localStorage.getItem('count'));
+    let count = 0;
+    // const v = [{blogs: 0}, {messages: 0}, {draft: 0}];
+    // localStorage.setItem('count', JSON.stringify(v));
     fetch("https://mybrand-faustin.cyclic.app/api/v1/blogs", {
         headers: {
             "Authorization": token
@@ -16,6 +19,7 @@ function adminRetrieveBlogs(){
             // console.log(data.data);
             const allblogs = data.data;
             for(let i = allblogs.length - 1; i >= 0; i--){
+                count += 1;
                 let blog = `<div class="blogs" id="blogs">
                 <div class="title"><span id="blog-title">${allblogs[i].title}</span><br>
                      <span id="image"><img src="${allblogs[i].image}" style= "width:150px; height:150px; border-radius: 23px;"></span>
@@ -26,6 +30,18 @@ function adminRetrieveBlogs(){
               </div>`
                 blogsContainer.innerHTML += blog;
             }
+            // for(let i = 0; i < countAll.length; i++){
+            //     if(Object.keys(countAll[i])[0] === 'blogs'){
+            //         countAll[i].blogs = count;
+            //         localStorage.setItem('count', countAll)
+            //     }
+            // }
+                // for(key in countAll){
+                //     if(key === 'blogs'){
+                //         countAll.key = count;
+                //     }
+                // }
+            // localStorage.setItem('count', countAll)
         })
         .catch((error) => alert(error));
 

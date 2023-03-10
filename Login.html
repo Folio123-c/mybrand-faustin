@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="login.css">
+    <script  src="./js/signin.js"></script>
 </head>
 <body>
-<form name="form" action="dashbordyy.html" onsubmit="return logedin(event)">
+<form name="form"  id="login-form" onsubmit=" event.preventDefault();userLogin();">
     <div class="imgcontainer">
         <img src="img_avatar2.png" alt="Avatar" class="avatar">
     </div>
@@ -24,7 +25,7 @@
             <input type="password" id="password"placeholder="Enter Password" name="psw" required>
         </label>
 
-        <a ><button type="submit" id="login" >Login</button></a>
+        <a ><button type="submit" id="login">Login</button></a>
         <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
         </label>
@@ -55,5 +56,4 @@
 
 </script>
 </body>
-<script  src="./js/signin.js"></script>
 </html>
