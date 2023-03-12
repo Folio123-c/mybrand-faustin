@@ -443,6 +443,7 @@ input[type=email], input[type=password],input[type=name],input[type=text] {
     color: #A8B2D1;
     text-align: center;
     line-height: 200px;
+    margin-top: 200px;
 
 }
 

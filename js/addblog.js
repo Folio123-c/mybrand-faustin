@@ -61,6 +61,7 @@ async function saveDraft(post) {
             },
             body: JSON.stringify(post)
         })
+
             .then((resp) => {
                 return resp.json();
             })
@@ -70,7 +71,8 @@ async function saveDraft(post) {
             })
             .catch((error) => alert(error));
         alert("Blog has been updated successfully");
-    } else {
+    }
+    else {
         await fetch(`https://mybrand-faustin.cyclic.app/api/v1/draft`, {
             method: "POST",
             headers: {

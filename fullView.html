@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="" xmlns="">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,17 +23,17 @@
   <style>
     @font-face {
       font-family: "Calibri";
-      src: url("WebstormProjects/mybrand-faustin/calibri.ttf");
+      src: url("calibri.ttf");
       font-weight: 400;
     }
     @font-face {
       font-family: "Calibri";
-      src: url("WebstormProjects/mybrand-faustin/calibri-bold.ttf");
+      src: url("calibri-bold.ttf");
       font-weight: 700;
     }
   </style>
 </head>
-<body>
+<body onload="displayBlogPost()">
 <div  class="homepage" id="frame-1">
   <div class="navbar">
     <nav class="topnav" id="myTopnav">
@@ -58,9 +58,9 @@
   </div>
 </div>
 <section class="blogs" id="blogs">
-  <div id="nano"></div>
-  <div id="mess"></div>
-
+  <div id="blog-title" >for blog title</div>
+  <div id="blog-image"> for blog image</div>
+  <div id="blog-content"> for content</div>
   </div>
 </section>
 
@@ -99,13 +99,13 @@
 
   let sticky = navbar.offsetTop;
 
-  // function myFunction() {
-  //   if (window.pageYOffset >= sticky) {
-  //     navbar.classList.add("sticky")
-  //   } else {
-  //     navbar.classList.remove("sticky");
-  //   }
-  // }
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
   function myFunction2() {
     let x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -114,24 +114,22 @@
       x.className = "topnav";
     }
   }
-  // function ValidateEmail(inputText)
-  // {
-  //   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  //   if(inputText.value.match(mailformat))
-  //   {
-  //     document.form.email.focus();
-  //     return true;
-  //   }
-  //   else
-  //   {
-  //     alert("Please Enter valid email");
-  //     document.form.email.focus();
-  //     return false;
-  //   }
-  // }
-
+  function ValidateEmail(inputText)
+  {
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(inputText.value.match(mailformat))
+    {
+      document.form.email.focus();
+      return true;
+    }
+    else
+    {
+      alert("Please Enter valid email");
+      document.form.email.focus();
+      return false;
+    }
+  }
 </script>
-
 <script  src="./js/Messages.js"></script>
 <script src="./js/fullView.js"></script>
 

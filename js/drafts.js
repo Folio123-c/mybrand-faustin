@@ -97,27 +97,4 @@ function redirectToEddBog(blogId){
     window.location.href = `./addblog.html?action=edit&id=${blogId}`
 }
 
-// function  editBlogPub(){
-//     // alert("Editing blog")
-//     let blogTitle = document.getElementById('name');
-//     let blogContent = document.getElementById('message');
-//     let urlParams = new URLSearchParams(window.location.search);
-//     let action = urlParams.get('action');
-//     let urlParamsId = new URLSearchParams(window.location.search);
-//     let blogId = urlParamsId.get('id');
-//     if(action === 'edit'){
-//         let allBlogs = JSON.parse(localStorage.getItem('published_posts'));
-//         console.log(allBlogs);
-//         for(let i = allBlogs.length - 1; i >= 0 ; i--){
-//             if(i === Number(blogId)) {
-//                 document.getElementById('editTitle').textContent = 'Edit blog';
-//                 document.getElementById('draft').textContent = 'Update';
-//                 document.getElementById('publish').textContent = 'publish';
-//                 blogTitle.value = allBlogs[i].title;
-//                 blogContent.innerHTML = allBlogs[i].content;
-//
-//             }
-//         }
-//     }
-// }
 

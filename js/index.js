@@ -18,9 +18,8 @@
              for(let i = allblogs.length - 1; i >= 0; i--){
                  let blog = `<div class="item1"><h2>${allblogs[i].title}<br><br></h2>
            <span id="image"><img src="${allblogs[i].image}" style= "width:150px; height:150px; border-radius: 23px;"></span>
-            <p>${allblogs[i].content} </p><br>
          <div>
-             <a href="./fullView.html"> <button class="btn" type="submit" id="${i}">Read more</button></a>
+             <a href="./fullView.html?id=${allblogs[i]._id}"> <button class="btn" id="readmore" type="submit" id="${i}" style= "margin-top: 30px; padding:8px;">Read more</button></a>
         </div>
     </div>`
                  blogsContainer.innerHTML += blog;

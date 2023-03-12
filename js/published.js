@@ -15,6 +15,7 @@ function adminRetrieveBlogs(){
         .then((data) => {
             // console.log(data.data);
             const allblogs = data.data;
+            // document.getElementById('pub').textContent = allblogs.length;
             for(let i = allblogs.length - 1; i >= 0; i--){
                 count += 1;
                 let blog = `<div class="blogs" id="blogs">

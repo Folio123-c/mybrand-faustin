@@ -1,9 +1,23 @@
-let blogIndex=localStorage.getItem('index');
-let allblogs = JSON.parse(localStorage.getItem('published_posts'));
+function displayBlogPost() {
+        const blogTitle = document.querySelector("#blog-title");
+        const blogImage = document.querySelector("#blog-image");
+        const blogContent = document.querySelector("#blog-content");
 
-let title = document.getElementById("nano");
 
-let content=document.getElementById("mess");
+        let urlParamsId = new URLSearchParams(window.location.search);
+        let blogId = urlParamsId.get('id');
+    console.log(blogId);
 
-title.innerHTML=allblogs[blogIndex].title;
-content.innerHTML=allblogs[blogIndex].content;
+        fetch(`https://mybrand-faustin.cyclic.app/api/v1/blogs/${blogId}`)
+            .then(resp => resp.json())
+            .then(blog => {
+                    blogTitle.innerHTML = blog.data.title;
+                    blogImage.innerHTML = `<img src="${blog.data.image}" alt="${blog.title}">`;
+                    blogContent.innerHTML = blog.data.content;
+            })
+            .catch(error => {
+                    console.error(error);
+            });
+}
+
+
